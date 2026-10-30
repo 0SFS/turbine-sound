@@ -1,0 +1,28 @@
+{
+  "name": "@0sfs/turbine-sound",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "exports": {
+    "./package.json": "./package.json",
+    "./manifest": "./public/0sfs-mod.json",
+    "./wasm": "./public/audio/turbine-sound/voice.wasm",
+    "./profile": {
+      "source": "./src/profile.ts",
+      "default": "./src/profile.ts"
+    },
+    "./assets": {
+      "source": "./src/assets.ts",
+      "default": "./src/assets.ts"
+    }
+  },
+  "scripts": {
+    "build:wasm": "node scripts/build-wasm.mjs",
+    "verify:wasm": "node scripts/verify-wasm.mjs"
+  },
+  "description": "Reusable procedural turbine engine sound generator for the AudioWorklet.",
+  "dependencies": {
+    "@0sfs/engine-sound": "file:../engine-sound"
+  }
+}
